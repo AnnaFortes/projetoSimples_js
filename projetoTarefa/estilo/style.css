@@ -49,13 +49,14 @@ form label {
 
 .input-group input[type="text"] {
     font-size: 0.8em;
+    width: 45vw;
     padding: 5px;
     border: none;
     border-radius: 3px 0px 0px 3px;
     outline: none; /* remove o contorno */
 }
 
-.input-group input[type="submit"] {
+.input-group input[type="button"] {
     width: 50px;
     background-color: #ffffff;
     padding: 7px;
@@ -64,6 +65,51 @@ form label {
     cursor: pointer;
 }
 
+p {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 8px;
+}
+
+#inputExterno {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.texto {
+    width: 40vw;
+    height: 7vh;
+    font-size: 0.8em;
+    padding: 9px;
+    border: 0px transparent;
+    border-radius: 3px 0px 0px 3px;
+}
+
+.icon {
+    width: 40px;
+    background-color: #ffffff;
+    padding: 7px;
+    border: 0px transparent;
+    box-shadow: 3px 3px 3px rgb(27, 243, 27);
+    cursor: pointer;
+}
+
+.icon1 {
+    width: 40px;
+    background-color: #ffffff;
+    padding: 7px;
+    border: 0px transparent;
+    border-radius: 0px 3px 3px 0px;
+    box-shadow: 3px 3px 3px red;
+
+    cursor: pointer;
+}
+
+.material-symbols-outlined {
+    color: black
+}
 
 
 
