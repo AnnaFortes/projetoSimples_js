@@ -73,44 +73,49 @@ p {
 
 #inputExterno {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .texto {
-    width: 40vw;
+    width: 50vw;
     height: 7vh;
     font-size: 0.8em;
+    text-align: center;
     padding: 9px;
+    margin-bottom: 7px;
     border: 0px transparent;
-    border-radius: 3px 0px 0px 3px;
+    border-radius: 3px;
 }
 
 .icon {
-    width: 40px;
+    width: 50px;
     background-color: #ffffff;
     padding: 7px;
     border: 0px transparent;
-    box-shadow: 3px 3px 3px rgb(27, 243, 27);
     cursor: pointer;
 }
 
+.icon:hover {
+    background-color: rgb(55, 133, 55);
+    border: 1px solid rgba(0, 0, 0, 0.353);
+    color: #ffffff;
+}
+
 .icon1 {
-    width: 40px;
+    width: 50px;
     background-color: #ffffff;
     padding: 7px;
     border: 0px transparent;
     border-radius: 0px 3px 3px 0px;
-    box-shadow: 3px 3px 3px red;
-
     cursor: pointer;
 }
 
-.material-symbols-outlined {
-    color: black
+.icon1:hover {
+    background-color: rgb(215, 13, 13);
+    border: 1px solid rgba(0, 0, 0, 0.353);
+    color: #ffffff;
 }
-
-
 
 
