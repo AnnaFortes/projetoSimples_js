@@ -19,6 +19,36 @@ function inputBotao() {
     botao1.style.cursor = 'pointer'
     botao2.style.cursor = 'pointer'
 
+    botao1.addEventListener('click', function() {
+        
+        if(botao1) {
+            this.style.backgroundColor = 'rgb(55, 133, 55)';
+            this.style.border = '1px solid rgba(0, 0, 0, 0.353)';
+            this.style.color = '#ffffff';
+        }
+
+        setTimeout(() => {
+            this.style.backgroundColor = '';
+            this.style.border = '';
+            this.style.color = '';
+        }, 500);
+    })
+
+    botao2.addEventListener('click', function() {
+       
+        if(botao2) {
+        this.style.backgroundColor = 'rgb(215, 13, 13)';
+        this.style.border = '1px solid rgba(0, 0, 0, 0.353)';
+        this.style.color = '#ffffff';
+}
+
+        setTimeout(() => {
+            this.style.backgroundColor = '';
+            this.style.border = '';
+            this.style.color = '';
+        }, 500);
+    })
+
     return [botao1, botao2];
     
 }
@@ -57,12 +87,12 @@ clique.addEventListener('click', function () {
         divs[3].appendChild(botao1);
         divs[3].appendChild(botao2)
     }
+
 //tempo para o botao voltar ao normal e removendo a class temporaria
     setTimeout(() => {
         this.style.border = '';
         this.classList.remove
         ('clicked');
-
     },500);
 });
 

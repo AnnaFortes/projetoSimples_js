@@ -97,12 +97,6 @@ p {
     cursor: pointer;
 }
 
-.icon:hover {
-    background-color: rgb(55, 133, 55);
-    border: 1px solid rgba(0, 0, 0, 0.353);
-    color: #ffffff;
-}
-
 .icon1 {
     width: 50px;
     background-color: #ffffff;
@@ -112,10 +106,5 @@ p {
     cursor: pointer;
 }
 
-.icon1:hover {
-    background-color: rgb(215, 13, 13);
-    border: 1px solid rgba(0, 0, 0, 0.353);
-    color: #ffffff;
-}
 
 
