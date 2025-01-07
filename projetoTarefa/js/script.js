@@ -1,111 +1,37 @@
-let tarefa = document.querySelector('#tarefa');
-let tarefas = document.querySelector('#tarefas')
-let clique = document.querySelector('#clique');
+document.getElementById('inputExterno').style.display = 'none';
+//função que adiciona tarefa
+function addTask() {
 
-function inputBotao() {
-//criando botao input
-    let botao1 = document.createElement('input');
-    let botao2 = document.createElement('input');
-//atribuindo o tipo
-    botao1.setAttribute('type', 'button');
-    botao2.setAttribute('type', 'button');
-//adicionando o valor do botao
-    botao1.value = '✔';
-    botao2.value = '✘'
-//criando uma classe ao botao
-    botao1.classList.add('icon');
-    botao2.classList.add('icon1');
+    const tarefas = document.querySelector('#tarefas').value;
 
-    botao1.style.cursor = 'pointer'
-    botao2.style.cursor = 'pointer'
+    if(tarefas) {
+        const tarefaItem = document.querySelector('.tarefa-item');
 
-    botao1.addEventListener('click', function() {
-        
-        if(botao1) {
-            this.style.backgroundColor = 'rgb(55, 133, 55)';
-            this.style.border = '1px solid rgba(0, 0, 0, 0.353)';
-            this.style.color = '#ffffff';
-        }
+        if(tarefaItem) {
 
-        setTimeout(() => {
-            this.style.backgroundColor = '';
-            this.style.border = '';
-            this.style.color = '';
-        }, 500);
-    })
+        const newTask = tarefaItem.cloneNode(true); //clonando html numa nova variavel
+        const textoImput = newTask.querySelector('.texto');
+        textoImput.value = tarefas;
 
-    botao2.addEventListener('click', function() {
-       
-        if(botao2) {
-        this.style.backgroundColor = 'rgb(215, 13, 13)';
-        this.style.border = '1px solid rgba(0, 0, 0, 0.353)';
-        this.style.color = '#ffffff';
+        const container = document.querySelector('#inputExterno');
+        container.style.display = 'block' 
+
+        container.appendChild(newTask);
+
+        document.querySelector('#tarefas').value = '';
+
+        console.log(newTask);
+    } else {
+        console.error('Elemento não encontrado.')
+    } 
+}
 }
 
-        setTimeout(() => {
-            this.style.backgroundColor = '';
-            this.style.border = '';
-            this.style.color = '';
-        }, 500);
-    })
+//evento de adicionar
+const clique = document.querySelector('#clique');
 
-    return [botao1, botao2];
-    
-}
+clique.addEventListener('click', function(e) { //e parametro de evento
+    e.preventDefault();
 
-//mouse dentro do limite do botao
-clique.addEventListener('mouseover',function() {
-//criando uma class temporaria no botao
-    if(!this.classList.contains('clicked')) {
-        this.style.backgroundColor = '#3F1140';
-        this.style.color = '#ffffff'
-        this.style.border = '';
-}
+    addTask();
 });
-
-//ao clicar
-clique.addEventListener('click', function () {    
-    //criando elemento input
-    let form1 = document.createElement('input');
-    let divs = document.querySelectorAll('div');
-
-    this.style.border = '1px solid rgba(255, 255, 255, 0.94)';
-
-//input do tipo texto
-    form1.setAttribute('type', 'text');
-//pegar o valor do input tarefa
-    let valorTarefa = tarefas.value;
-//jogar o valor ao novo input
-    form1.value = valorTarefa;
-//adicionando classe 
-    form1.classList.add('texto'); 
-    
-    let [botao1, botao2] = inputBotao();
-//especificando que sera na 4 div, que tem a posição 3
-    if(divs[3]) {
-        divs[3].appendChild(form1);
-        divs[3].appendChild(botao1);
-        divs[3].appendChild(botao2)
-    }
-
-//tempo para o botao voltar ao normal e removendo a class temporaria
-    setTimeout(() => {
-        this.style.border = '';
-        this.classList.remove
-        ('clicked');
-    },500);
-});
-
-//com a class temporaria removida, saio do botao
-clique.addEventListener('mouseout',
-     function() {
-    if(!this.classList.contains('clicked')) {
-        this.style.backgroundColor = '';
-        this.style.color = 'black'
-}
-});
-//ao clicar no input, faz o botao click voltar ao normal e pode ser clicado outra vez
-tarefa.addEventListener('input', function() {
-    clique.style.border = '';
-})
-

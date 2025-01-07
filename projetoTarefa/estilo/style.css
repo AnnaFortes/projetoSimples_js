@@ -65,6 +65,11 @@ form label {
     cursor: pointer;
 }
 
+.input-group input[type="button"]:hover {
+    background-color: #4d1c34;
+    color: #ffffff;
+}
+
 p {
     text-align: center;
     margin-bottom: 20px;
@@ -72,39 +77,44 @@ p {
 }
 
 #inputExterno {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    display: flex; /* Flex container para alinhamento dos elementos */
+    flex-direction: column; /* Cada linha de tarefa ocupa uma linha */
+    gap: 10px; /* Espaçamento entre as tarefas */
+}
+
+.tarefa-item {
+    display: flex; /* Flex container para alinhar input e botões */
+    align-items: center; /* Alinha os elementos verticalmente */
+    gap: 5px; /* Espaço entre o input e os botões */
+    margin-bottom: 5px;
 }
 
 .texto {
-    width: 50vw;
-    height: 7vh;
-    font-size: 0.8em;
-    text-align: center;
-    padding: 9px;
-    margin-bottom: 7px;
+    flex: 1; /* O input cresce para ocupar o máximo de espaço */
+    background-color: #ffffff;
+    padding: 6.5px;
     border: 0px transparent;
     border-radius: 3px;
+    text-align: center;
+    outline: none;
 }
 
-.icon {
-    width: 50px;
+.btn-verif, .btn-remove {
     background-color: #ffffff;
-    padding: 7px;
+    width: 40px; 
+    height: 40px; 
     border: 0px transparent;
+    border-radius: 3px; 
     cursor: pointer;
+    font-size: 0.8em;
 }
 
-.icon1 {
-    width: 50px;
-    background-color: #ffffff;
-    padding: 7px;
-    border: 0px transparent;
-    border-radius: 0px 3px 3px 0px;
-    cursor: pointer;
+.btn-verif:hover {
+    background-color: rgba(35, 190, 35, 0.719);
+    color: #ffffff;
 }
-  
 
-
+.btn-remove:hover {
+    background-color: rgba(226, 13, 13, 0.829);
+    color: #ffffff;
+}
