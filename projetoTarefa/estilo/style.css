@@ -63,6 +63,7 @@ form label {
     border: 0px transparent;
     border-radius: 0px 3px 3px 0px;
     cursor: pointer;
+    transition: .5s;
 }
 
 .input-group input[type="button"]:hover {
@@ -107,6 +108,7 @@ p {
     border-radius: 3px; 
     cursor: pointer;
     font-size: 0.8em;
+    transition: .5s; /* animaçãp nos botões */
 }
 
 .btn-verif:hover {
